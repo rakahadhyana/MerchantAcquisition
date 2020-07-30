@@ -59,7 +59,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:GetPassword DisplayName="Get Password" sap:VirtualizedContainerService.HintSize="412,22" sap2010:WorkflowViewState.IdRef="GetPassword_1" ProtectedPassword="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAeDqKCQve1EeIH3LqdWAEPAAAAAACAAAAAAAQZgAAAAEAACAAAADKy7lGtFEcFlsOKWuO/trDe11XizzxNcrBLhqkNwmNsAAAAAAOgAAAAAIAACAAAAAX0oy3bHxS2YMK8YVLQ/ioZyMg62tDi1ZxBT6TqInSphAAAACzm+xuH014NCiMnIRAWPcDQAAAAMfZYOs3+p+FqQGDeKcNr4yPCR1tptqdhgDg9Aum0DcgphOTSvih7hpwrF32YHd81XdQiqyQMZThCBNKIhFXf18=" Result="[password]" />
-    <ui:GetIMAPMailMessages TimeoutMS="{x:Null}" DeleteMessages="False" DisplayName="Get IMAP Mail Messages" Email="[email]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="412,22" sap2010:WorkflowViewState.IdRef="GetIMAPMailMessages_1" MailFolder="Inbox" MarkAsRead="False" Messages="[messages]" OnlyUnreadMessages="True" Password="[password]" Port="993" SecureConnection="Auto" Server="imap.gmail.com" Top="5" />
+    <ui:GetIMAPMailMessages TimeoutMS="{x:Null}" DeleteMessages="False" DisplayName="Get IMAP Mail Messages" Email="[email]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="412,22" sap2010:WorkflowViewState.IdRef="GetIMAPMailMessages_1" MailFolder="Inbox" MarkAsRead="False" Messages="[messages]" OnlyUnreadMessages="False" Password="[password]" Port="993" SecureConnection="Auto" Server="imap.gmail.com" Top="5" />
     <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="412,285" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[messages]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="snm:MailMessage">

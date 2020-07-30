@@ -1729,9 +1729,9 @@
     "restore": {
       "projectUniqueName": "MerchantAcquisition",
       "projectName": "MerchantAcquisition",
-      "projectPath": "D:\\Development\\RPA\\MerchantAcquisition\\MerchantAcquisition\\.local",
+      "projectPath": "D:\\Development\\MerchantAcquisition\\.local",
       "packagesPath": "C:\\Users\\Raka\\.nuget\\packages\\",
-      "outputPath": "D:\\Development\\RPA\\MerchantAcquisition\\MerchantAcquisition\\.local"
+      "outputPath": "D:\\Development\\MerchantAcquisition\\.local"
     },
     "frameworks": {
       "net461": {
