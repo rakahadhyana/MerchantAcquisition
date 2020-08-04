@@ -1723,15 +1723,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Raka\\.nuget\\packages\\": {}
+    "C:\\Users\\Deni\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "MerchantAcquisition",
       "projectName": "MerchantAcquisition",
-      "projectPath": "D:\\Development\\MerchantAcquisition\\.local",
-      "packagesPath": "C:\\Users\\Raka\\.nuget\\packages\\",
-      "outputPath": "D:\\Development\\MerchantAcquisition\\.local"
+      "projectPath": "D:\\Kuliah\\Asisten\\Icstar Indonesia Lomba\\MerchantAcquisition\\.local",
+      "packagesPath": "C:\\Users\\Deni\\.nuget\\packages\\",
+      "outputPath": "D:\\Kuliah\\Asisten\\Icstar Indonesia Lomba\\MerchantAcquisition\\.local"
     },
     "frameworks": {
       "net461": {
