@@ -1723,15 +1723,15 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Deni\\.nuget\\packages\\": {}
+    "C:\\Users\\Raka\\.nuget\\packages\\": {}
   },
   "project": {
     "restore": {
       "projectUniqueName": "MerchantAcquisition",
       "projectName": "MerchantAcquisition",
-      "projectPath": "D:\\MerchantAcquisition\\.local",
-      "packagesPath": "C:\\Users\\Deni\\.nuget\\packages\\",
-      "outputPath": "D:\\MerchantAcquisition\\.local"
+      "projectPath": "D:\\Development\\MerchantAcquisition\\.local",
+      "packagesPath": "C:\\Users\\Raka\\.nuget\\packages\\",
+      "outputPath": "D:\\Development\\MerchantAcquisition\\.local"
     },
     "frameworks": {
       "net461": {
@@ -1759,14 +1759,5 @@
         }
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU3034",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Extended.Wpf.Toolkit 2.8' from source 'https://api.nuget.org/v3/index.json': This package is signed but not by a trusted signer.",
-      "libraryId": "Extended.Wpf.Toolkit"
-    }
-  ]
+  }
 }
