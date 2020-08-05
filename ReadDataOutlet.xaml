@@ -1,11 +1,12 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="ReadDataOutlet" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="attachmentPath" Type="InArgument(x:String)" />
+    <x:Property Name="outletDataOutput" Type="OutArgument(scg:List(scg:Dictionary(x:String, x:String)))" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>707,2370</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>707,2472</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ReadDataOutlet_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="44">
@@ -61,20 +62,17 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ReadDataOutlet" sap:VirtualizedContainerService.HintSize="717,2165" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ReadDataOutlet" sap:VirtualizedContainerService.HintSize="717,2267" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
-      <Variable x:TypeArguments="scg:List(scg:Dictionary(x:String, x:String))" Name="outletDataList">
-        <Variable.Default>
-          <mva:VisualBasicValue x:TypeArguments="scg:List(scg:Dictionary(x:String, x:String))" ExpressionText="New List(Of Dictionary(Of String, String))" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="scg:List(scg:Dictionary(x:String, x:String))" Default="[New List(Of Dictionary(Of String, String))]" Name="outletDataList" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="675,1974" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" WorkbookPath="attachments\Input Merchant Acquisition (1).xlsx">
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="675,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[attachmentPath]" />
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="675,1974" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" WorkbookPath="[attachmentPath]">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
@@ -82,11 +80,7 @@
           </ActivityAction.Argument>
           <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="641,1865" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <Sequence.Variables>
-              <Variable x:TypeArguments="s:String[]" Name="columsOutletData">
-                <Variable.Default>
-                  <mva:VisualBasicValue x:TypeArguments="s:String[]" ExpressionText="{}{&quot;B&quot;, &quot;E&quot;, &quot;H&quot;}" />
-                </Variable.Default>
-              </Variable>
+              <Variable x:TypeArguments="s:String[]" Default="[{&quot;B&quot;, &quot;E&quot;, &quot;H&quot;}]" Name="columsOutletData" />
             </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -101,11 +95,7 @@
                   </ActivityAction.Argument>
                   <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="563,1640" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <Sequence.Variables>
-                      <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="outletData">
-                        <Variable.Default>
-                          <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:String)" ExpressionText="New Dictionary(Of String, String)" />
-                        </Variable.Default>
-                      </Variable>
+                      <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Default="[New Dictionary(Of String, String)]" Name="outletData" />
                     </Sequence.Variables>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -131,12 +121,12 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:ExcelReadCell Cell="[column + &quot;25&quot;]" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_2" SheetName="Versi 1">
+                          <ui:ExcelReadCell Cell="[column + &quot;25&quot;]" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_2" PreserveFormat="True" SheetName="Versi 1">
                             <ui:ExcelReadCell.Result>
                               <OutArgument x:TypeArguments="x:String">[outletData("Nama PIC")]</OutArgument>
                             </ui:ExcelReadCell.Result>
                           </ui:ExcelReadCell>
-                          <ui:ExcelReadCell Cell="[column + &quot;26&quot;]" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_3" SheetName="Versi 1">
+                          <ui:ExcelReadCell Cell="[column + &quot;26&quot;]" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_3" PreserveFormat="True" SheetName="Versi 1">
                             <ui:ExcelReadCell.Result>
                               <OutArgument x:TypeArguments="x:String">[outletData("No. Telepon PIC")]</OutArgument>
                             </ui:ExcelReadCell.Result>
@@ -147,27 +137,27 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </ui:ExcelReadCell>
-                          <ui:ExcelReadCell Cell="[column + &quot;27&quot;]" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_4" SheetName="Versi 1">
+                          <ui:ExcelReadCell Cell="[column + &quot;27&quot;]" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_4" PreserveFormat="True" SheetName="Versi 1">
                             <ui:ExcelReadCell.Result>
                               <OutArgument x:TypeArguments="x:String">[outletData("No Rekening")]</OutArgument>
                             </ui:ExcelReadCell.Result>
                           </ui:ExcelReadCell>
-                          <ui:ExcelReadCell Cell="[Chr(Asc(column) + 1) + &quot;28&quot;]" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_5" SheetName="Versi 1">
+                          <ui:ExcelReadCell Cell="[Chr(Asc(column) + 1) + &quot;28&quot;]" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_5" PreserveFormat="True" SheetName="Versi 1">
                             <ui:ExcelReadCell.Result>
                               <OutArgument x:TypeArguments="x:String">[outletData("Nama Gedung / Ruko / Komplek")]</OutArgument>
                             </ui:ExcelReadCell.Result>
                           </ui:ExcelReadCell>
-                          <ui:ExcelReadCell Cell="[Chr(Asc(column) + 1) + &quot;29&quot;]" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_6" SheetName="Versi 1">
+                          <ui:ExcelReadCell Cell="[Chr(Asc(column) + 1) + &quot;29&quot;]" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_6" PreserveFormat="True" SheetName="Versi 1">
                             <ui:ExcelReadCell.Result>
                               <OutArgument x:TypeArguments="x:String">[outletData("Nama Jalan")]</OutArgument>
                             </ui:ExcelReadCell.Result>
                           </ui:ExcelReadCell>
-                          <ui:ExcelReadCell Cell="[Chr(Asc(column) + 1) + &quot;30&quot;]" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_7" SheetName="Versi 1">
+                          <ui:ExcelReadCell Cell="[Chr(Asc(column) + 1) + &quot;30&quot;]" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_7" PreserveFormat="True" SheetName="Versi 1">
                             <ui:ExcelReadCell.Result>
                               <OutArgument x:TypeArguments="x:String">[outletData("No")]</OutArgument>
                             </ui:ExcelReadCell.Result>
                           </ui:ExcelReadCell>
-                          <ui:ExcelReadCell Cell="[Chr(Asc(column) + 1) + &quot;31&quot;]" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_8" SheetName="Versi 1">
+                          <ui:ExcelReadCell Cell="[Chr(Asc(column) + 1) + &quot;31&quot;]" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_8" PreserveFormat="True" SheetName="Versi 1">
                             <ui:ExcelReadCell.Result>
                               <OutArgument x:TypeArguments="x:String">[outletData("Kelurahan")]</OutArgument>
                             </ui:ExcelReadCell.Result>
@@ -177,7 +167,7 @@
                               <OutArgument x:TypeArguments="x:String">[outletData("Kode Pos")]</OutArgument>
                             </ui:ExcelReadCell.Result>
                           </ui:ExcelReadCell>
-                          <ui:ExcelReadCell Cell="[Chr(Asc(column) + 1) + &quot;33&quot;]" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_10" SheetName="Versi 1">
+                          <ui:ExcelReadCell Cell="[Chr(Asc(column) + 1) + &quot;33&quot;]" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_10" PreserveFormat="True" SheetName="Versi 1">
                             <ui:ExcelReadCell.Result>
                               <OutArgument x:TypeArguments="x:String">[outletData("RT/RW atau Blok")]</OutArgument>
                             </ui:ExcelReadCell.Result>
@@ -192,7 +182,7 @@
                               <OutArgument x:TypeArguments="x:String">[outletData("Kota")]</OutArgument>
                             </ui:ExcelReadCell.Result>
                           </ui:ExcelReadCell>
-                          <ui:ExcelReadCell Cell="[column + &quot;36&quot;]" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_13" SheetName="Versi 1">
+                          <ui:ExcelReadCell Cell="[column + &quot;36&quot;]" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_13" PreserveFormat="True" SheetName="Versi 1">
                             <ui:ExcelReadCell.Result>
                               <OutArgument x:TypeArguments="x:String">[outletData("Telepon")]</OutArgument>
                             </ui:ExcelReadCell.Result>
@@ -209,6 +199,13 @@
         </ActivityAction>
       </ui:ExcelApplicationScope.Body>
     </ui:ExcelApplicationScope>
-    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="675,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[outletDataList(1)(&quot;Nama Outlet&quot;)]" />
+    <Assign sap:VirtualizedContainerService.HintSize="675,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="scg:List(scg:Dictionary(x:String, x:String))">[outletDataOutput]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="scg:List(scg:Dictionary(x:String, x:String))">[outletDataList]</InArgument>
+      </Assign.Value>
+    </Assign>
   </Sequence>
 </Activity>
