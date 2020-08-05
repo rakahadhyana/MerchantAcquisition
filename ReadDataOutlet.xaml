@@ -3,11 +3,12 @@
     <x:Property Name="R_data_outlet1" Type="OutArgument(scg:Dictionary(x:String, x:String))" />
     <x:Property Name="R_data_outlet2" Type="OutArgument(scg:Dictionary(x:String, x:String))" />
     <x:Property Name="R_data_outlet3" Type="OutArgument(scg:Dictionary(x:String, x:String))" />
+    <x:Property Name="attachmentPath" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>874.4,2644.8</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>705,2680</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ReadDataOutlet_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="44">
@@ -63,7 +64,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ReadDataOutlet" sap:VirtualizedContainerService.HintSize="712.8,2480" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ReadDataOutlet" sap:VirtualizedContainerService.HintSize="715,2475" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(scg:Dictionary(x:String, x:String))" Default="[New List(Of Dictionary(Of String, String))]" Name="outletDataList" />
     </Sequence.Variables>
@@ -72,13 +73,13 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="671.2,1994.4" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" WorkbookPath="attachments\Input Merchant Acquisition (1).xlsx">
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="673,1990" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" WorkbookPath="attachments\Input Merchant Acquisition (1).xlsx">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="637.6,1884.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="639,1881" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <Sequence.Variables>
               <Variable x:TypeArguments="s:String[]" Default="[{&quot;B&quot;, &quot;E&quot;, &quot;H&quot;}]" Name="columsOutletData" />
             </Sequence.Variables>
@@ -87,13 +88,13 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="596,1792" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[columsOutletData]">
+            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="597,1789" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[columsOutletData]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="x:String">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:String" Name="column" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="560.8,1657.6" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="561,1656" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Default="[New Dictionary(Of String, String)]" Name="outletData" />
                     </Sequence.Variables>
@@ -102,7 +103,7 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:ExcelReadCell Cell="[column + &quot;24&quot;]" DisplayName="Read Nama Outlet" sap:VirtualizedContainerService.HintSize="519.2,60" sap2010:WorkflowViewState.IdRef="ExcelReadCell_1" SheetName="Versi 1">
+                    <ui:ExcelReadCell Cell="[column + &quot;24&quot;]" DisplayName="Read Nama Outlet" sap:VirtualizedContainerService.HintSize="519,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_1" SheetName="Versi 1">
                       <ui:ExcelReadCell.Result>
                         <OutArgument x:TypeArguments="x:String">[outletData("Nama Outlet")]</OutArgument>
                       </ui:ExcelReadCell.Result>

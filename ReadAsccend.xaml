@@ -8,11 +8,12 @@
     <x:Property Name="R_asscend_madr" Type="OutArgument(scg:Dictionary(x:String, x:String))" />
     <x:Property Name="R_asscend_mamr" Type="OutArgument(scg:Dictionary(x:String, x:String))" />
     <x:Property Name="R_asscend_settlement" Type="OutArgument(scg:Dictionary(x:String, x:String))" />
+    <x:Property Name="attachmentPath" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>874.4,614.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>662,578</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ReadAsccend_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="44">
@@ -67,7 +68,7 @@
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ReadAsccend" sap:VirtualizedContainerService.HintSize="475.2,380" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ReadAsccend" sap:VirtualizedContainerService.HintSize="476,373" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="mapf" />
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="madr" />
@@ -83,13 +84,13 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="433.6,178.4" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" WorkbookPath="attachments\Input Merchant Acquisition (1).xlsx">
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="434,175" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" WorkbookPath="attachments\Input Merchant Acquisition (1).xlsx">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Reading Asccend Data" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Reading Asccend Data" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1001,7 +1002,7 @@
         </ActivityAction>
       </ui:ExcelApplicationScope.Body>
     </ui:ExcelApplicationScope>
-    <Sequence DisplayName="Assign Variable to Arguments" sap:VirtualizedContainerService.HintSize="433.6,68.8" sap2010:WorkflowViewState.IdRef="Sequence_39">
+    <Sequence DisplayName="Assign Variable to Arguments" sap:VirtualizedContainerService.HintSize="434,66" sap2010:WorkflowViewState.IdRef="Sequence_39">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
