@@ -3,6 +3,7 @@
   "description": "Autostonk Hackton Team - Merchant Acquistion Automation Process",
   "main": "Main.xaml",
   "dependencies": {
+    "UiPath.Credentials.Activities": "[1.1.6479.13204]",
     "UiPath.Excel.Activities": "[2.8.6]",
     "UiPath.Mail.Activities": "[1.8.6]",
     "UiPath.System.Activities": "[20.4.0]",
