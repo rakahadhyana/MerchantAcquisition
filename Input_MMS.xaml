@@ -11,7 +11,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>874.4,2484</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>874.4,1525.6</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Input_MMS_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="46">
@@ -67,7 +67,7 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Input_MMS" sap:VirtualizedContainerService.HintSize="416.8,2319.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Input_MMS" sap:VirtualizedContainerService.HintSize="400,1360.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="mmsExist" />
     </Sequence.Variables>
@@ -76,7 +76,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Sales Channel Input" sap:VirtualizedContainerService.HintSize="375.2,68.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Sales Channel Input" sap:VirtualizedContainerService.HintSize="358.4,68.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="nip" />
         <Variable x:TypeArguments="x:String" Name="areas" />
@@ -240,7 +240,7 @@
         </ui:Click.Target>
       </ui:Click>
     </Sequence>
-    <Sequence DisplayName="Data Merchant Input" sap:VirtualizedContainerService.HintSize="400,3372.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="Data Merchant Input" sap:VirtualizedContainerService.HintSize="358.4,68.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="nama_merchant" />
         <Variable x:TypeArguments="x:String" Name="PIC" />
@@ -956,7 +956,7 @@
         </ui:Click.Target>
       </ui:Click>
     </Sequence>
-    <Sequence DisplayName="Data Outlet" sap:VirtualizedContainerService.HintSize="375.2,68.8" sap2010:WorkflowViewState.IdRef="Sequence_9">
+    <Sequence DisplayName="Data Outlet" sap:VirtualizedContainerService.HintSize="358.4,68.8" sap2010:WorkflowViewState.IdRef="Sequence_9">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Boolean" Name="info" />
       </Sequence.Variables>
@@ -1925,7 +1925,7 @@
         </If.Then>
       </If>
     </Sequence>
-    <Sequence DisplayName="Data Owner / Companies" sap:VirtualizedContainerService.HintSize="375.2,68.8" sap2010:WorkflowViewState.IdRef="Sequence_12">
+    <Sequence DisplayName="Data Owner / Companies" sap:VirtualizedContainerService.HintSize="358.4,68.8" sap2010:WorkflowViewState.IdRef="Sequence_12">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="nama_perusahaan" />
         <Variable x:TypeArguments="x:String" Name="nama_pemilik" />
@@ -2267,7 +2267,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </Sequence>
     </Sequence>
-    <Sequence DisplayName="Documents" sap:VirtualizedContainerService.HintSize="375.2,68.8" sap2010:WorkflowViewState.IdRef="Sequence_13">
+    <Sequence DisplayName="Documents" sap:VirtualizedContainerService.HintSize="358.4,68.8" sap2010:WorkflowViewState.IdRef="Sequence_13">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="no_ktp" />
         <Variable x:TypeArguments="x:String" Name="no_siup" />
@@ -2455,7 +2455,7 @@
         </ui:Click.Target>
       </ui:Click>
     </Sequence>
-    <Sequence DisplayName="Request" sap:VirtualizedContainerService.HintSize="375.2,1027.2" sap2010:WorkflowViewState.IdRef="Sequence_15">
+    <Sequence DisplayName="Request" sap:VirtualizedContainerService.HintSize="1212.8,3572" sap2010:WorkflowViewState.IdRef="Sequence_15">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Boolean" Name="on_edc" />
         <Variable x:TypeArguments="x:String" Name="nama_outlet" />
@@ -2508,7 +2508,7 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Init Request Data" sap:VirtualizedContainerService.HintSize="333.6,252.8" sap2010:WorkflowViewState.IdRef="Sequence_30">
+      <Sequence DisplayName="Init Request Data" sap:VirtualizedContainerService.HintSize="1171.2,1479.2" sap2010:WorkflowViewState.IdRef="Sequence_30">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:Int32" Name="index" />
         </Sequence.Variables>
@@ -2530,11 +2530,371 @@
             <OutArgument x:TypeArguments="x:String">[nama_outlet]</OutArgument>
           </Assign.To>
           <Assign.Value>
-            <InArgument x:TypeArguments="x:String">[data_request(0)("nama_outlet")]</InArgument>
+            <InArgument x:TypeArguments="x:String">[data_request(index)("nama_outlet")]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <Assign DisplayName="Assign Jenis EDC" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_78">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[jenis_edc]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[data_request(index)("jenis_edc")]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <Assign DisplayName="Assign Tanggal Pasang" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_79">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[tanggal_pasang]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[data_request(index)("tanggal_pasang")]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <Sequence DisplayName="Init Variable without mdr or plancode" sap:VirtualizedContainerService.HintSize="262.4,68.8" sap2010:WorkflowViewState.IdRef="Sequence_31">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign DisplayName="Assign Visa off US" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_80">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[visa_off_us]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[data_request(index)("visa_off_us")]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Assign Visa off US" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_81">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[visa_on_us]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[data_request(index)("visa_on_us")]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Assign Debit On US" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_82">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[debit_on_us]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[data_request(index)("debit_on_us")]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Assign Debit off US" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_83">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[debit_off_us]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[data_request(index)("debit_off_us")]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Assign MegaPoint" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_84">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[megapoint]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[data_request(index)("megapoint")]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Assign EDC prepaid" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_85">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[edc_prepaid]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[data_request(index)("edc_prepaid")]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Assign Megapay 3 bulan" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_86">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[megapay_3_bulan]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[data_request(index)("megapay_3_bulan")]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Assign Megapay 6 bulan" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_87">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[megapay_6_bulan]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[data_request(index)("megapay_6_bulan")]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Assign Megapay 12 bulan" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_88">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[megapay_12_bulan]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[data_request(index)("megapay_12_bulan")]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Assign Master off us" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_89">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[master_off_us]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[data_request(index)("master_off_us")]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Assign Master on us" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_90">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[master_on_us]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[data_request(index)("master_on_us")]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+        <Sequence DisplayName="Init Variable MDR" sap:VirtualizedContainerService.HintSize="262.4,68.8" sap2010:WorkflowViewState.IdRef="Sequence_34">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign DisplayName="Assign Visa off US MDR" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_120">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[visa_off_us_mdr]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[data_request(index)("visa_off_us_mdr")]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Assign Visa off US MDR" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_121">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[visa_on_us_mdr]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[data_request(index)("visa_on_us_mdr")]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Assign Debit On MDR" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_122">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[debit_on_us_mdr]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[data_request(index)("debit_on_us_mdr")]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Assign Debit off MDR" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_123">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[debit_off_us_mdr]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[data_request(index)("debit_off_us_mdr")]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Assign MegaPoint MDR" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_124">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[megapoint_mdr]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[data_request(index)("megapoint_mdr")]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Assign EDC prepaid MDR" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_125">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[edc_prepaid_mdr]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[data_request(index)("edc_prepaid_mdr")]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Assign Megapay 3 bulan MDR" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_126">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[megapay_3_bulan_mdr]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[data_request(index)("megapay_3_bulan_mdr")]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Assign Megapay 6 bulan MDR" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_127">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[megapay_6_bulan_mdr]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[data_request(index)("megapay_6_bulan_mdr")]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Assign Megapay 12 bulan MDR" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_128">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[megapay_12_bulan_mdr]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[data_request(index)("megapay_12_bulan_mdr")]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Assign Master off us MDR" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_129">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[master_off_us_mdr]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[data_request(index)("master_off_us_mdr")]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Assign Master on us MDR" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_130">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[master_on_us_mdr]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[data_request(index)("master_on_us_mdr")]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+        <Sequence DisplayName="Init Variable Plan Code" sap:VirtualizedContainerService.HintSize="262.4,68.8" sap2010:WorkflowViewState.IdRef="Sequence_35">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign DisplayName="Assign Visa off US Plan Code" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_131">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[visa_off_us_plan_code]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[data_request(index)("visa_off_us_plan_code")]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Assign Visa off US Plan Code" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_132">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[visa_on_us_plan_code]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[data_request(index)("visa_on_us_plan_code")]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Assign Debit On US Plan Code" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_133">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[debit_on_us_plan_code]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[data_request(index)("debit_on_us_plan_code")]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Assign Debit off US Plan Code" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_134">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[debit_off_us_plan_code]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[data_request(index)("debit_off_us_plan_code")]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Assign MegaPoint Plan Code" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_135">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[megapoint_plan_code]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[data_request(index)("megapoint_plan_code")]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Assign EDC prepaid Plan Code" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_136">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[edc_prepaid_plan_code]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[data_request(index)("edc_prepaid_plan_code")]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Assign Megapay 3 bulan Plan Code" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_137">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[megapay_3_bulan_plan_code]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[data_request(index)("megapay_3_bulan_plan_code")]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Assign Megapay 6 bulan Plan Code" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_138">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[megapay_6_bulan_plan_code]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[data_request(index)("megapay_6_bulan_plan_code")]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Assign Megapay 12 bulan Plan Code" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_139">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[megapay_12_bulan_plan_code]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[data_request(index)("megapay_12_bulan_plan_code")]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Assign Master off us Plan Code" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_140">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[master_off_us_plan_code]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[data_request(index)("master_off_us_plan_code")]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="Assign Master on us Plan Code" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_141">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[master_on_us_plan_code]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[data_request(index)("master_on_us_plan_code")]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+        <Assign DisplayName="Assign Prepaid" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_113">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[prepaid]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[data_request(index)("prepaid")]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <Assign DisplayName="Assign E- Commerce" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_114">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[e_commerce]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[data_request(index)("e_commerce")]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <Assign DisplayName="Assign program" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_115">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[program]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[data_request(index)("program")]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <Assign DisplayName="Assign e-Commerce Keterangan" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_116">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[e_commerce_keterangan]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[data_request(index)("e_commerce_keterangan")]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <Assign DisplayName="Assign Nama Program" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_117">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[nama_program]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[data_request(index)("nama_program")]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <Assign DisplayName="Assign Program Start Date" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_118">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[program_start_date]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[data_request(index)("program_start_date")]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <Assign DisplayName="Assign Program End Date" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_119">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[program_end_date]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[data_request(index)("program_end_date")]</InArgument>
           </Assign.Value>
         </Assign>
       </Sequence>
-      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'TD'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_27" KeyModifiers="None" MouseButton="BTN_LEFT">
+      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'TD'" sap:VirtualizedContainerService.HintSize="1171.2,107.2" sap2010:WorkflowViewState.IdRef="Click_27" KeyModifiers="None" MouseButton="BTN_LEFT">
         <ui:Click.CursorPosition>
           <ui:CursorPosition Position="Center">
             <ui:CursorPosition.OffsetX>
@@ -2556,7 +2916,7 @@
           </ui:Target>
         </ui:Click.Target>
       </ui:Click>
-      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_28" KeyModifiers="None" MouseButton="BTN_LEFT">
+      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT'" sap:VirtualizedContainerService.HintSize="1171.2,107.2" sap2010:WorkflowViewState.IdRef="Click_28" KeyModifiers="None" MouseButton="BTN_LEFT">
         <ui:Click.CursorPosition>
           <ui:CursorPosition Position="Center">
             <ui:CursorPosition.OffsetX>
@@ -2578,10 +2938,10 @@
           </ui:Target>
         </ui:Click.Target>
       </ui:Click>
-      <If Condition="[5&gt;4]" DisplayName="Reading Request EDC" sap:VirtualizedContainerService.HintSize="333.6,52.8" sap2010:WorkflowViewState.IdRef="If_15">
+      <If Condition="[5&gt;4]" DisplayName="Reading Request EDC" sap:VirtualizedContainerService.HintSize="1171.2,1371.2" sap2010:WorkflowViewState.IdRef="If_15">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
@@ -3245,7 +3605,7 @@
           </If>
         </If.Else>
       </If>
-      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'TD'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_47" KeyModifiers="None" MouseButton="BTN_LEFT">
+      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'TD'" sap:VirtualizedContainerService.HintSize="1171.2,107.2" sap2010:WorkflowViewState.IdRef="Click_47" KeyModifiers="None" MouseButton="BTN_LEFT">
         <ui:Click.CursorPosition>
           <ui:CursorPosition Position="Center">
             <ui:CursorPosition.OffsetX>
@@ -3267,7 +3627,7 @@
           </ui:Target>
         </ui:Click.Target>
       </ui:Click>
-      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'TD'" sap:VirtualizedContainerService.HintSize="333.6,107.2" sap2010:WorkflowViewState.IdRef="Click_48" KeyModifiers="None" MouseButton="BTN_LEFT">
+      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'TD'" sap:VirtualizedContainerService.HintSize="1171.2,107.2" sap2010:WorkflowViewState.IdRef="Click_48" KeyModifiers="None" MouseButton="BTN_LEFT">
         <ui:Click.CursorPosition>
           <ui:CursorPosition Position="Center">
             <ui:CursorPosition.OffsetX>
