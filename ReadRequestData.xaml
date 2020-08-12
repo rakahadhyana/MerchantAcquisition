@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1087.2,614.4</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>792,4040</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ReadMerchantData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="24">
@@ -68,7 +68,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Read Request Data" sap:VirtualizedContainerService.HintSize="241.6,363.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Read Request Data" sap:VirtualizedContainerService.HintSize="512,3875.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="request" />
       <Variable x:TypeArguments="x:Int32" Name="i" />
@@ -76,21 +76,30 @@
       <Variable x:TypeArguments="s:String[]" Name="initKey2" />
       <Variable x:TypeArguments="x:Int32" Name="index" />
       <Variable x:TypeArguments="s:String[]" Name="initKey3" />
-      <Variable x:TypeArguments="scg:List(scg:Dictionary(x:String, x:String))" Name="requestDataList" />
+      <Variable x:TypeArguments="scg:List(scg:Dictionary(x:String, x:String))" Name="requestDataList">
+        <Variable.Default>
+          <mva:VisualBasicValue x:TypeArguments="scg:List(scg:Dictionary(x:String, x:String))" ExpressionText="New List(Of Dictionary(Of String, String))" />
+        </Variable.Default>
+      </Variable>
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="R_dataRequest1" />
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="R_dataRequest2" />
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="R_dataRequest3" />
+      <Variable x:TypeArguments="scg:List(x:String)" Name="testList">
+        <Variable.Default>
+          <mva:VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="New List(of string)" />
+        </Variable.Default>
+      </Variable>
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Init Variable" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
+    <Sequence DisplayName="Init Variable" sap:VirtualizedContainerService.HintSize="470.4,776.8" sap2010:WorkflowViewState.IdRef="Sequence_6">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <Assign DisplayName="Init Dictionary Arguments 1" sap:VirtualizedContainerService.HintSize="262.4,64" sap2010:WorkflowViewState.IdRef="Assign_7">
@@ -188,19 +197,19 @@
         </Assign.Value>
       </Assign>
     </Sequence>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Read Excels" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" WorkbookPath="attachments\Input Merchant Acquisition (1).xlsx">
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Read Excels" sap:VirtualizedContainerService.HintSize="470.4,2278.4" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" WorkbookPath="attachments\Input Merchant Acquisition (1).xlsx">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Read Data Excel to Dictionary 1" sap:VirtualizedContainerService.HintSize="740.8,379.2" sap2010:WorkflowViewState.IdRef="Sequence_14">
+          <Sequence DisplayName="Read Data Excel to Dictionary 1" sap:VirtualizedContainerService.HintSize="436.8,2168.8" sap2010:WorkflowViewState.IdRef="Sequence_14">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Read Detail 1" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence DisplayName="Read Detail 1" sap:VirtualizedContainerService.HintSize="395.2,68.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -599,14 +608,14 @@
                 </sap:WorkflowViewStateService.ViewState>
               </ui:ForEachRow>
             </Sequence>
-            <Sequence DisplayName="Read Detail 2" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_50">
+            <Sequence DisplayName="Read Detail 2" sap:VirtualizedContainerService.HintSize="395.2,1858.4" sap2010:WorkflowViewState.IdRef="Sequence_50">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <Assign sap:VirtualizedContainerService.HintSize="657.6,60" sap2010:WorkflowViewState.IdRef="Assign_108">
+              <Assign sap:VirtualizedContainerService.HintSize="353.6,60" sap2010:WorkflowViewState.IdRef="Assign_108">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:Int32">[i]</OutArgument>
                 </Assign.To>
@@ -614,7 +623,7 @@
                   <InArgument x:TypeArguments="x:Int32">0</InArgument>
                 </Assign.Value>
               </Assign>
-              <ui:ExcelReadRange AddHeaders="True" DataTable="[request]" DisplayName="Read Detail 1" sap:VirtualizedContainerService.HintSize="657.6,60" sap2010:WorkflowViewState.IdRef="ExcelReadRange_15" Range="H63:H64" SheetName="Versi 1">
+              <ui:ExcelReadRange AddHeaders="True" DataTable="[request]" DisplayName="Read Detail 1" sap:VirtualizedContainerService.HintSize="353.6,60" sap2010:WorkflowViewState.IdRef="ExcelReadRange_15" Range="H63:H64" SheetName="Versi 1">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -622,7 +631,7 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:ExcelReadRange>
-              <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[request]" DisplayName="For Each Row Read 1" sap:VirtualizedContainerService.HintSize="657.6,52.8" sap2010:WorkflowViewState.IdRef="ForEachRow_19">
+              <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[request]" DisplayName="For Each Row Read 1" sap:VirtualizedContainerService.HintSize="353.6,52.8" sap2010:WorkflowViewState.IdRef="ForEachRow_19">
                 <ui:ForEachRow.Body>
                   <ActivityAction x:TypeArguments="sd:DataRow">
                     <ActivityAction.Argument>
@@ -661,8 +670,8 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:ForEachRow>
-              <ui:ExcelReadRange AddHeaders="True" DataTable="[request]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="657.6,60" sap2010:WorkflowViewState.IdRef="ExcelReadRange_16" Range="I64:I66" SheetName="Versi 1" />
-              <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[request]" DisplayName="For Each Row Read 2" sap:VirtualizedContainerService.HintSize="657.6,52.8" sap2010:WorkflowViewState.IdRef="ForEachRow_20">
+              <ui:ExcelReadRange AddHeaders="True" DataTable="[request]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="353.6,60" sap2010:WorkflowViewState.IdRef="ExcelReadRange_16" Range="I64:I66" SheetName="Versi 1" />
+              <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[request]" DisplayName="For Each Row Read 2" sap:VirtualizedContainerService.HintSize="353.6,52.8" sap2010:WorkflowViewState.IdRef="ForEachRow_20">
                 <ui:ForEachRow.Body>
                   <ActivityAction x:TypeArguments="sd:DataRow">
                     <ActivityAction.Argument>
@@ -700,8 +709,8 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:ForEachRow>
-              <ui:ExcelReadRange AddHeaders="True" DataTable="[request]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="657.6,60" sap2010:WorkflowViewState.IdRef="ExcelReadRange_17" Range="J67:J78" SheetName="Versi 1" />
-              <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[request]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="657.6,52.8" sap2010:WorkflowViewState.IdRef="ForEachRow_21">
+              <ui:ExcelReadRange AddHeaders="True" DataTable="[request]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="353.6,60" sap2010:WorkflowViewState.IdRef="ExcelReadRange_17" Range="J67:J78" SheetName="Versi 1" />
+              <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[request]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="353.6,52.8" sap2010:WorkflowViewState.IdRef="ForEachRow_21">
                 <ui:ForEachRow.Body>
                   <ActivityAction x:TypeArguments="sd:DataRow">
                     <ActivityAction.Argument>
@@ -739,8 +748,8 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:ForEachRow>
-              <ui:ExcelReadRange AddHeaders="True" DataTable="[request]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="657.6,60" sap2010:WorkflowViewState.IdRef="ExcelReadRange_18" Range="H78:H81" SheetName="Versi 1" />
-              <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[request]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="657.6,52.8" sap2010:WorkflowViewState.IdRef="ForEachRow_22">
+              <ui:ExcelReadRange AddHeaders="True" DataTable="[request]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="353.6,60" sap2010:WorkflowViewState.IdRef="ExcelReadRange_18" Range="H78:H81" SheetName="Versi 1" />
+              <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[request]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="353.6,401.6" sap2010:WorkflowViewState.IdRef="ForEachRow_22">
                 <ui:ForEachRow.Body>
                   <ActivityAction x:TypeArguments="sd:DataRow">
                     <ActivityAction.Argument>
@@ -773,13 +782,13 @@
                 </ui:ForEachRow.Body>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:ForEachRow>
-              <ui:ExcelReadRange AddHeaders="True" DataTable="[request]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="657.6,60" sap2010:WorkflowViewState.IdRef="ExcelReadRange_19" Range="J79:J83" SheetName="Versi 1" />
-              <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[request]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="657.6,52.8" sap2010:WorkflowViewState.IdRef="ForEachRow_23">
+              <ui:ExcelReadRange AddHeaders="True" DataTable="[request]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="353.6,60" sap2010:WorkflowViewState.IdRef="ExcelReadRange_19" Range="J79:J83" SheetName="Versi 1" />
+              <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[request]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="353.6,52.8" sap2010:WorkflowViewState.IdRef="ForEachRow_23">
                 <ui:ForEachRow.Body>
                   <ActivityAction x:TypeArguments="sd:DataRow">
                     <ActivityAction.Argument>
@@ -817,8 +826,8 @@
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:ForEachRow>
-              <ui:ExcelReadRange AddHeaders="True" DataTable="[request]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="657.6,60" sap2010:WorkflowViewState.IdRef="ExcelReadRange_20" Range="J67:J78" SheetName="Versi 1" />
-              <Assign sap:VirtualizedContainerService.HintSize="657.6,60" sap2010:WorkflowViewState.IdRef="Assign_63">
+              <ui:ExcelReadRange AddHeaders="True" DataTable="[request]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="353.6,60" sap2010:WorkflowViewState.IdRef="ExcelReadRange_20" Range="J67:J78" SheetName="Versi 1" />
+              <Assign sap:VirtualizedContainerService.HintSize="353.6,60" sap2010:WorkflowViewState.IdRef="Assign_63">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:Int32">[i]</OutArgument>
                 </Assign.To>
@@ -826,7 +835,7 @@
                   <InArgument x:TypeArguments="x:Int32">68</InArgument>
                 </Assign.Value>
               </Assign>
-              <Assign sap:VirtualizedContainerService.HintSize="657.6,60" sap2010:WorkflowViewState.IdRef="Assign_64">
+              <Assign sap:VirtualizedContainerService.HintSize="353.6,60" sap2010:WorkflowViewState.IdRef="Assign_64">
                 <Assign.To>
                   <OutArgument x:TypeArguments="x:Int32">[index]</OutArgument>
                 </Assign.To>
@@ -834,33 +843,33 @@
                   <InArgument x:TypeArguments="x:Int32">0</InArgument>
                 </Assign.Value>
               </Assign>
-              <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[request]" DisplayName="For Each Row Read MDR dan Plan Code when true" sap:VirtualizedContainerService.HintSize="657.6,1047.2" sap2010:WorkflowViewState.IdRef="ForEachRow_26">
+              <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[request]" DisplayName="For Each Row Read MDR dan Plan Code when true" sap:VirtualizedContainerService.HintSize="353.6,52.8" sap2010:WorkflowViewState.IdRef="ForEachRow_26">
                 <ui:ForEachRow.Body>
                   <ActivityAction x:TypeArguments="sd:DataRow">
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
                     </ActivityAction.Argument>
-                    <Sequence DisplayName="Sequence Read MDR and Plan Code" sap:VirtualizedContainerService.HintSize="608,898.4" sap2010:WorkflowViewState.IdRef="Sequence_49">
+                    <Sequence DisplayName="Sequence Read MDR and Plan Code" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_49">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Sequence sap:VirtualizedContainerService.HintSize="566.4,705.6" sap2010:WorkflowViewState.IdRef="Sequence_48">
+                      <Sequence sap:VirtualizedContainerService.HintSize="566.4,504" sap2010:WorkflowViewState.IdRef="Sequence_48">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             <x:Boolean x:Key="IsPinned">False</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="524.8,512.8" sap2010:WorkflowViewState.IdRef="Sequence_47">
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="524.8,311.2" sap2010:WorkflowViewState.IdRef="Sequence_47">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <If Condition="[row(0).ToString.Equals(&quot;True&quot;)]" DisplayName="If Read MDR" sap:VirtualizedContainerService.HintSize="483.2,420" sap2010:WorkflowViewState.IdRef="If_5">
+                          <If Condition="[row(0).ToString.Equals(&quot;True&quot;)]" DisplayName="If Read MDR" sap:VirtualizedContainerService.HintSize="483.2,218.4" sap2010:WorkflowViewState.IdRef="If_5">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -868,10 +877,11 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                             <If.Then>
-                              <Sequence DisplayName="Sequence Read MDR &amp; Plan" sap:VirtualizedContainerService.HintSize="241.6,270.4" sap2010:WorkflowViewState.IdRef="Sequence_46">
+                              <Sequence DisplayName="Sequence Read MDR &amp; Plan" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_46">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
                                 <Sequence DisplayName="Sequence Read  MDR" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_43">
@@ -992,13 +1002,13 @@
                 </ui:ForEachRow.Body>
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
               </ui:ForEachRow>
             </Sequence>
-            <Sequence DisplayName="Read Detail 3" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_78">
+            <Sequence DisplayName="Read Detail 3" sap:VirtualizedContainerService.HintSize="395.2,68.8" sap2010:WorkflowViewState.IdRef="Sequence_78">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -1402,24 +1412,30 @@
       </ui:ExcelApplicationScope.Body>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ExcelApplicationScope>
-    <Sequence DisplayName="Assign into List" sap:VirtualizedContainerService.HintSize="304,152.8" sap2010:WorkflowViewState.IdRef="Sequence_79">
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="470.4,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[R_dataRequest1(&quot;nama_outlet&quot;)]" />
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="470.4,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[R_dataRequest2(&quot;nama_outlet&quot;)]" />
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="470.4,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[R_dataRequest3(&quot;nama_outlet&quot;)]" />
+    <AddToCollection x:TypeArguments="scg:Dictionary(x:String, x:String)" Collection="[requestDataList]" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="470.4,22.4" sap2010:WorkflowViewState.IdRef="AddToCollection`1_2" Item="[R_dataRequest1]" />
+    <AddToCollection x:TypeArguments="scg:Dictionary(x:String, x:String)" Collection="[requestDataList]" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="470.4,22.4" sap2010:WorkflowViewState.IdRef="AddToCollection`1_3" Item="[R_dataRequest2]" />
+    <AddToCollection x:TypeArguments="scg:Dictionary(x:String, x:String)" Collection="[requestDataList]" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="470.4,22.4" sap2010:WorkflowViewState.IdRef="AddToCollection`1_4" Item="[R_dataRequest3]" />
+    <Sequence DisplayName="Assign into List" sap:VirtualizedContainerService.HintSize="470.4,152.8" sap2010:WorkflowViewState.IdRef="Sequence_79">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <Assign DisplayName="Assign List" sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_110">
         <Assign.To>
-          <OutArgument x:TypeArguments="scg:List(scg:Dictionary(x:String, x:String))">[requestDataList]</OutArgument>
+          <OutArgument x:TypeArguments="scg:List(scg:Dictionary(x:String, x:String))">[RequestData]</OutArgument>
         </Assign.To>
         <Assign.Value>
-          <InArgument x:TypeArguments="scg:List(scg:Dictionary(x:String, x:String))">[RequestData]</InArgument>
+          <InArgument x:TypeArguments="scg:List(scg:Dictionary(x:String, x:String))">[requestDataList]</InArgument>
         </Assign.Value>
       </Assign>
     </Sequence>
