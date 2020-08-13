@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>792,4040</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>792,3732.8</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ReadMerchantData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="24">
@@ -68,7 +68,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Read Request Data" sap:VirtualizedContainerService.HintSize="512,3875.2" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Read Request Data" sap:VirtualizedContainerService.HintSize="512,3568" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="request" />
       <Variable x:TypeArguments="x:Int32" Name="i" />
@@ -76,19 +76,11 @@
       <Variable x:TypeArguments="s:String[]" Name="initKey2" />
       <Variable x:TypeArguments="x:Int32" Name="index" />
       <Variable x:TypeArguments="s:String[]" Name="initKey3" />
-      <Variable x:TypeArguments="scg:List(scg:Dictionary(x:String, x:String))" Name="requestDataList">
-        <Variable.Default>
-          <mva:VisualBasicValue x:TypeArguments="scg:List(scg:Dictionary(x:String, x:String))" ExpressionText="New List(Of Dictionary(Of String, String))" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="scg:List(scg:Dictionary(x:String, x:String))" Default="[New List(Of Dictionary(Of String, String))]" Name="requestDataList" />
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="R_dataRequest1" />
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="R_dataRequest2" />
       <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Name="R_dataRequest3" />
-      <Variable x:TypeArguments="scg:List(x:String)" Name="testList">
-        <Variable.Default>
-          <mva:VisualBasicValue x:TypeArguments="scg:List(x:String)" ExpressionText="New List(of string)" />
-        </Variable.Default>
-      </Variable>
+      <Variable x:TypeArguments="scg:List(x:String)" Default="[New List(of string)]" Name="testList" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -1417,9 +1409,6 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ExcelApplicationScope>
-    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="470.4,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[R_dataRequest1(&quot;nama_outlet&quot;)]" />
-    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="470.4,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[R_dataRequest2(&quot;nama_outlet&quot;)]" />
-    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="470.4,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[R_dataRequest3(&quot;nama_outlet&quot;)]" />
     <AddToCollection x:TypeArguments="scg:Dictionary(x:String, x:String)" Collection="[requestDataList]" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="470.4,22.4" sap2010:WorkflowViewState.IdRef="AddToCollection`1_2" Item="[R_dataRequest1]" />
     <AddToCollection x:TypeArguments="scg:Dictionary(x:String, x:String)" Collection="[requestDataList]" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="470.4,22.4" sap2010:WorkflowViewState.IdRef="AddToCollection`1_3" Item="[R_dataRequest2]" />
     <AddToCollection x:TypeArguments="scg:Dictionary(x:String, x:String)" Collection="[requestDataList]" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="470.4,22.4" sap2010:WorkflowViewState.IdRef="AddToCollection`1_4" Item="[R_dataRequest3]" />
