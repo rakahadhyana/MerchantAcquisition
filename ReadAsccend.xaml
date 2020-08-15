@@ -9,11 +9,12 @@
     <x:Property Name="R_asscend_mamr" Type="OutArgument(scg:List(scg:Dictionary(x:String, x:String)))" />
     <x:Property Name="R_asscend_settlement" Type="OutArgument(scg:List(scg:Dictionary(x:String, x:String)))" />
     <x:Property Name="attachmentPath" Type="InArgument(x:String)" />
+    <x:Property Name="R_automation_condition" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1136,3821</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1136,4730</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ReadAsccend_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="23">
@@ -68,7 +69,7 @@
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ReadAsccend" sap:VirtualizedContainerService.HintSize="859,3616" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ReadAsccend" sap:VirtualizedContainerService.HintSize="859,4525" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:List(scg:Dictionary(x:String, x:String))" Default="[New List(of Dictionary(of String, String))]" Name="mapfList" />
       <Variable x:TypeArguments="scg:List(scg:Dictionary(x:String, x:String))" Default="[New List(of Dictionary(of String, String))]" Name="madrList" />
@@ -79,32 +80,33 @@
       <Variable x:TypeArguments="scg:List(scg:Dictionary(x:String, x:String))" Default="[New List(of Dictionary(of String, String))]" Name="asccend_reviewList" />
       <Variable x:TypeArguments="scg:List(scg:Dictionary(x:String, x:String))" Default="[New List(of Dictionary(of String, String))]" Name="masaList" />
       <Variable x:TypeArguments="scg:List(scg:Dictionary(x:String, x:String))" Default="[New List(of Dictionary(of String, String))]" Name="asccend_settlementList" />
+      <Variable x:TypeArguments="x:String" Name="automation_condition" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="817,2632" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" WorkbookPath="[attachmentPath]">
+    <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="817,3441" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" WorkbookPath="[attachmentPath]">
       <ui:ExcelApplicationScope.Body>
         <ActivityAction x:TypeArguments="ui:WorkbookApplication">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Reading Asccend Data" sap:VirtualizedContainerService.HintSize="783,2523" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Reading Asccend Data" sap:VirtualizedContainerService.HintSize="783,3332" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="741,2431" sap2010:WorkflowViewState.IdRef="ForEach`1_9" Values="[columnStartList]">
+            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="741,3240" sap2010:WorkflowViewState.IdRef="ForEach`1_9" Values="[columnStartList]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="x:String">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:String" Name="column" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="705,2298" sap2010:WorkflowViewState.IdRef="Sequence_50">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="705,3107" sap2010:WorkflowViewState.IdRef="Sequence_50">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="merchantId" />
                       <Variable x:TypeArguments="x:String" Default="Versi 1" Name="sheetName" />
@@ -129,9 +131,9 @@
                         <OutArgument x:TypeArguments="x:String">[merchantId]</OutArgument>
                       </ui:ExcelReadCell.Result>
                     </ui:ExcelReadCell>
-                    <If Condition="[not merchantId.Equals(&quot;&quot;)]" sap:VirtualizedContainerService.HintSize="663,2007" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If Condition="[not merchantId.Equals(&quot;&quot;)]" sap:VirtualizedContainerService.HintSize="663,2816" sap2010:WorkflowViewState.IdRef="If_1">
                       <If.Then>
-                        <Sequence sap:VirtualizedContainerService.HintSize="418,1860" sap2010:WorkflowViewState.IdRef="Sequence_49">
+                        <Sequence sap:VirtualizedContainerService.HintSize="418,2669" sap2010:WorkflowViewState.IdRef="Sequence_49">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -361,13 +363,13 @@
                             </ui:ExcelReadCell>
                             <AddToCollection x:TypeArguments="scg:Dictionary(x:String, x:String)" Collection="[masaList]" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_7" Item="[masa]" />
                           </Sequence>
-                          <Sequence DisplayName="Read settlement" sap:VirtualizedContainerService.HintSize="376,66" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                          <Sequence DisplayName="Read settlement" sap:VirtualizedContainerService.HintSize="376,807" sap2010:WorkflowViewState.IdRef="Sequence_38">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="scg:Dictionary(x:String, x:String)" Default="[New Dictionary(of String, String)]" Name="asccend_settlement" />
                             </Sequence.Variables>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
@@ -414,12 +416,17 @@
                             </ui:ExcelReadCell>
                             <AddToCollection x:TypeArguments="scg:Dictionary(x:String, x:String)" Collection="[asccend_settlementList]" DisplayName="Add To Collection" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddToCollection`1_8" Item="[asccend_settlement]" />
                           </Sequence>
-                          <Sequence sap:VirtualizedContainerService.HintSize="376,83" sap2010:WorkflowViewState.IdRef="Sequence_51">
+                          <Sequence sap:VirtualizedContainerService.HintSize="376,151" sap2010:WorkflowViewState.IdRef="Sequence_51">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
+                            <ui:ExcelReadCell Cell="D2" DisplayName="Read Cell" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadCell_45" SheetName="[sheetName]">
+                              <ui:ExcelReadCell.Result>
+                                <OutArgument x:TypeArguments="x:String">[automation_condition]</OutArgument>
+                              </ui:ExcelReadCell.Result>
+                            </ui:ExcelReadCell>
                           </Sequence>
                         </Sequence>
                       </If.Then>
@@ -441,7 +448,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ExcelApplicationScope>
-    <Sequence DisplayName="Assign Variable to Arguments" sap:VirtualizedContainerService.HintSize="817,852" sap2010:WorkflowViewState.IdRef="Sequence_39">
+    <Sequence DisplayName="Assign Variable to Arguments" sap:VirtualizedContainerService.HintSize="817,952" sap2010:WorkflowViewState.IdRef="Sequence_39">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -510,6 +517,14 @@
         </Assign.To>
         <Assign.Value>
           <InArgument x:TypeArguments="scg:List(scg:Dictionary(x:String, x:String))">[asccend_settlementList]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_58">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[R_automation_condition]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[automation_condition]</InArgument>
         </Assign.Value>
       </Assign>
     </Sequence>
