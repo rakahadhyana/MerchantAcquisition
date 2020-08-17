@@ -11,7 +11,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>725,1506</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>784,544</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Input_MMS_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="48">
@@ -75,7 +75,7 @@
       <x:Boolean x:Key="ShouldExpandAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Input_MMS" sap:VirtualizedContainerService.HintSize="376,1138" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Input_MMS" sap:VirtualizedContainerService.HintSize="376,1031" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Boolean" Name="mmsExist" />
     </Sequence.Variables>
@@ -85,7 +85,7 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="Sales Channel Input" sap:VirtualizedContainerService.HintSize="334,68" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence DisplayName="Sales Channel Input" sap:VirtualizedContainerService.HintSize="334,66" sap2010:WorkflowViewState.IdRef="Sequence_2">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="nip" />
         <Variable x:TypeArguments="x:String" Name="areas" />
@@ -249,7 +249,7 @@
         </ui:Click.Target>
       </ui:Click>
     </Sequence>
-    <Sequence DisplayName="Data Merchant Input" sap:VirtualizedContainerService.HintSize="334,68" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Sequence DisplayName="Data Merchant Input" sap:VirtualizedContainerService.HintSize="753,3529" sap2010:WorkflowViewState.IdRef="Sequence_3">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="nama_merchant" />
         <Variable x:TypeArguments="x:String" Name="PIC" />
@@ -281,7 +281,7 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <Sequence DisplayName="Init data merchant input" sap:VirtualizedContainerService.HintSize="304,2352" sap2010:WorkflowViewState.IdRef="Sequence_24">
+      <Sequence DisplayName="Init data merchant input" sap:VirtualizedContainerService.HintSize="711,66" sap2010:WorkflowViewState.IdRef="Sequence_24">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -473,7 +473,6 @@
           </Assign.Value>
         </Assign>
       </Sequence>
-      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="711,62" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[sales_volume]" />
       <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'TD'" sap:VirtualizedContainerService.HintSize="711,106" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT">
         <ui:Click.CursorPosition>
           <ui:CursorPosition Position="Center">
@@ -1010,7 +1009,7 @@
         </ui:Click.Target>
       </ui:Click>
     </Sequence>
-    <Sequence DisplayName="Data Outlet" sap:VirtualizedContainerService.HintSize="334,68" sap2010:WorkflowViewState.IdRef="Sequence_9">
+    <Sequence DisplayName="Data Outlet" sap:VirtualizedContainerService.HintSize="334,66" sap2010:WorkflowViewState.IdRef="Sequence_9">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Boolean" Name="info" />
         <Variable x:TypeArguments="x:Int32" Name="list" />
@@ -1476,7 +1475,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:ForEach>
     </Sequence>
-    <Sequence DisplayName="Data Owner / Companies" sap:VirtualizedContainerService.HintSize="334,68" sap2010:WorkflowViewState.IdRef="Sequence_12">
+    <Sequence DisplayName="Data Owner / Companies" sap:VirtualizedContainerService.HintSize="334,66" sap2010:WorkflowViewState.IdRef="Sequence_12">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="nama_perusahaan" />
         <Variable x:TypeArguments="x:String" Name="nama_pemilik" />
@@ -1818,7 +1817,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </Sequence>
     </Sequence>
-    <Sequence DisplayName="Documents" sap:VirtualizedContainerService.HintSize="334,68" sap2010:WorkflowViewState.IdRef="Sequence_13">
+    <Sequence DisplayName="Documents" sap:VirtualizedContainerService.HintSize="334,66" sap2010:WorkflowViewState.IdRef="Sequence_13">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:String" Name="no_ktp" />
         <Variable x:TypeArguments="x:String" Name="no_siup" />
@@ -2006,7 +2005,7 @@
         </ui:Click.Target>
       </ui:Click>
     </Sequence>
-    <Sequence DisplayName="Request" sap:VirtualizedContainerService.HintSize="334,68" sap2010:WorkflowViewState.IdRef="Sequence_118">
+    <Sequence DisplayName="Request" sap:VirtualizedContainerService.HintSize="334,66" sap2010:WorkflowViewState.IdRef="Sequence_118">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -13116,14 +13115,14 @@
         </If>
       </Sequence>
     </Sequence>
-    <Sequence DisplayName="Recommendation" sap:VirtualizedContainerService.HintSize="334,68" sap2010:WorkflowViewState.IdRef="Sequence_22">
+    <Sequence DisplayName="Recommendation" sap:VirtualizedContainerService.HintSize="334,66" sap2010:WorkflowViewState.IdRef="Sequence_22">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <If Condition="[data_recommendation(0)(&quot;mcc&quot;) &lt;&gt; &quot;&quot;]" DisplayName="If Recommendation 1 Tersedia" sap:VirtualizedContainerService.HintSize="484,218" sap2010:WorkflowViewState.IdRef="If_21">
+      <If Condition="[data_recommendation(0)(&quot;mcc&quot;) &lt;&gt; &quot;&quot;]" DisplayName="If Recommendation 1 Tersedia" sap:VirtualizedContainerService.HintSize="484,214" sap2010:WorkflowViewState.IdRef="If_21">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -13131,7 +13130,7 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
         <If.Then>
-          <Sequence DisplayName="Input Recommendation 1" sap:VirtualizedContainerService.HintSize="200,68" sap2010:WorkflowViewState.IdRef="Sequence_21">
+          <Sequence DisplayName="Input Recommendation 1" sap:VirtualizedContainerService.HintSize="242,1637" sap2010:WorkflowViewState.IdRef="Sequence_21">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="mcc" />
               <Variable x:TypeArguments="x:String" Name="payment_mode" />
@@ -13155,7 +13154,7 @@
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence DisplayName="Init Data RecommendationVariable" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_29">
+            <Sequence DisplayName="Init Data RecommendationVariable" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_29">
               <Sequence.Variables>
                 <Variable x:TypeArguments="x:Int32" Name="index" />
               </Sequence.Variables>
@@ -13294,7 +13293,7 @@
                 </Assign.Value>
               </Assign>
             </Sequence>
-            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT'" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="Click_49" KeyModifiers="None" MouseButton="BTN_LEFT">
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Click_49" KeyModifiers="None" MouseButton="BTN_LEFT">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -13316,7 +13315,7 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'INPUT  mcc'" EmptyField="True" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="TypeInto_85" Text="[mcc]">
+            <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'INPUT  mcc'" EmptyField="True" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TypeInto_85" Text="[mcc]">
               <ui:TypeInto.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="fc6d080c-d652-4fee-b56f-822969fadf61" InformativeScreenshot="596700e1fdf03f198c80a6d4777f7272" Selector="&lt;html title='Merchant Management System' /&gt;&lt;webctrl id='mcc' tag='INPUT' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -13328,7 +13327,7 @@
                 </ui:Target>
               </ui:TypeInto.Target>
             </ui:TypeInto>
-            <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  paymode'" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="SelectItem_10" Item="[payment_mode]">
+            <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  paymode'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SelectItem_10" Item="[payment_mode]">
               <ui:SelectItem.Items>
                 <scg:List x:TypeArguments="x:String" Capacity="4">
                   <x:String></x:String>
@@ -13347,7 +13346,7 @@
                 </ui:Target>
               </ui:SelectItem.Target>
             </ui:SelectItem>
-            <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  payday'" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="SelectItem_11" Item="[payment_days]">
+            <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  payday'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SelectItem_11" Item="[payment_days]">
               <ui:SelectItem.Items>
                 <scg:List x:TypeArguments="x:String" Capacity="8">
                   <x:String></x:String>
@@ -13436,7 +13435,7 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <Sequence DisplayName="Input Segment Merchant" sap:VirtualizedContainerService.HintSize="200,68.8" sap2010:WorkflowViewState.IdRef="Sequence_20">
+            <Sequence DisplayName="Input Segment Merchant" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_20">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -13604,7 +13603,7 @@
                 </If.Then>
               </If>
             </Sequence>
-            <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  mccRisk'" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="SelectItem_12" Item="[mcc_risk]">
+            <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  mccRisk'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SelectItem_12" Item="[mcc_risk]">
               <ui:SelectItem.Items>
                 <scg:List x:TypeArguments="x:String" Capacity="4">
                   <x:String></x:String>
@@ -13630,7 +13629,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:SelectItem>
-            <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'INPUT  mccFr'" EmptyField="True" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="TypeInto_88" Text="[mcc_fraud_ratio]">
+            <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'INPUT  mccFr'" EmptyField="True" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TypeInto_88" Text="[mcc_fraud_ratio]">
               <ui:TypeInto.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="577514e7-35c6-47b0-9e7a-248f611bb67c" InformativeScreenshot="4b1e28e902eff050e477cf665a4a2186" Selector="&lt;html title='Merchant Management System' /&gt;&lt;webctrl id='mccFr' tag='INPUT' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -13648,7 +13647,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:TypeInto>
-            <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'INPUT  NDX" EmptyField="True" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="TypeInto_89" Text="[ndx]">
+            <ui:TypeInto AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into 'INPUT  NDX" EmptyField="True" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TypeInto_89" Text="[ndx]">
               <ui:TypeInto.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="577514e7-35c6-47b0-9e7a-248f611bb67c" InformativeScreenshot="e0327e9c0fc53ee3683c3167e2ff4a73" Selector="&lt;html title='Merchant Management System' /&gt;&lt;webctrl id='ndx' tag='INPUT' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -13660,7 +13659,7 @@
                 </ui:Target>
               </ui:TypeInto.Target>
             </ui:TypeInto>
-            <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  metodeTrx'" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="SelectItem_13" Item="[metode_trx]">
+            <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  metodeTrx'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="SelectItem_13" Item="[metode_trx]">
               <ui:SelectItem.Items>
                 <scg:List x:TypeArguments="x:String" Capacity="4">
                   <x:String></x:String>
@@ -13679,7 +13678,7 @@
                 </ui:Target>
               </ui:SelectItem.Target>
             </ui:SelectItem>
-            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'TEXTAREA  rekomenresiko'" EmptyField="True" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="TypeInto_90" Text="[rekomendasi_resiko]">
+            <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'TEXTAREA  rekomenresiko'" EmptyField="True" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="TypeInto_90" Text="[rekomendasi_resiko]">
               <ui:TypeInto.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b992a6f9-66a7-4710-b0e3-611594ed871c" InformativeScreenshot="80dafe1c595cccbd11ff242c80f9236d" Selector="&lt;html title='Merchant Management System' /&gt;&lt;webctrl id='rekomenresiko' tag='TEXTAREA' /&gt;">
                   <ui:Target.TimeoutMS>
@@ -13691,7 +13690,7 @@
                 </ui:Target>
               </ui:TypeInto.Target>
             </ui:TypeInto>
-            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  Save'" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="Click_56" KeyModifiers="None" MouseButton="BTN_LEFT">
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  Save'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Click_56" KeyModifiers="None" MouseButton="BTN_LEFT">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -13713,7 +13712,7 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Button'" sap:VirtualizedContainerService.HintSize="200,52.8" sap2010:WorkflowViewState.IdRef="Click_57" KeyModifiers="None" MouseButton="BTN_LEFT">
+            <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'Button'" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="Click_57" KeyModifiers="None" MouseButton="BTN_LEFT">
               <ui:Click.CursorPosition>
                 <ui:CursorPosition Position="Center">
                   <ui:CursorPosition.OffsetX>
@@ -13738,7 +13737,7 @@
           </Sequence>
         </If.Then>
       </If>
-      <If Condition="[data_recommendation(1)(&quot;mcc&quot;) &lt;&gt; &quot;&quot;]" DisplayName="If Recommendation 2 Tersedia " sap:VirtualizedContainerService.HintSize="484,52" sap2010:WorkflowViewState.IdRef="If_56">
+      <If Condition="[data_recommendation(1)(&quot;mcc&quot;) &lt;&gt; &quot;&quot;]" DisplayName="If Recommendation 2 Tersedia " sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="If_56">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -14358,7 +14357,7 @@
           </Sequence>
         </If.Then>
       </If>
-      <If Condition="[data_recommendation(2)(&quot;mcc&quot;) &lt;&gt; &quot;&quot;]" DisplayName="If Recommendation 3 Tersedia" sap:VirtualizedContainerService.HintSize="484,52" sap2010:WorkflowViewState.IdRef="If_62">
+      <If Condition="[data_recommendation(2)(&quot;mcc&quot;) &lt;&gt; &quot;&quot;]" DisplayName="If Recommendation 3 Tersedia" sap:VirtualizedContainerService.HintSize="484,51" sap2010:WorkflowViewState.IdRef="If_62">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -14979,26 +14978,6 @@
         </If.Then>
       </If>
     </Sequence>
-    <ui:SelectItem AlterIfDisabled="{x:Null}" ContinueOnError="{x:Null}" DelayAfter="{x:Null}" DelayBefore="{x:Null}" DisplayName="Select Item 'SELECT  assign_to'" sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="SelectItem_14" Item="CLSA - qwe">
-      <ui:SelectItem.Items>
-        <scg:List x:TypeArguments="x:String" Capacity="4">
-          <x:String></x:String>
-          <x:String>CLSM - FRANS VERDINAN</x:String>
-          <x:String>CLSA - IKA WIDYA (JKT)</x:String>
-          <x:String>CLSA - qwe</x:String>
-        </scg:List>
-      </ui:SelectItem.Items>
-      <ui:SelectItem.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="3aab3b17-a80d-4e43-87fb-c28deeab066e" InformativeScreenshot="edc43d88917e2a026c8fdecbba9efbc6" Selector="&lt;html title='Merchant Management System' /&gt;&lt;webctrl id='assign_to' tag='SELECT' /&gt;">
-          <ui:Target.TimeoutMS>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:Target.TimeoutMS>
-          <ui:Target.WaitForReady>
-            <InArgument x:TypeArguments="ui:WaitForReady" />
-          </ui:Target.WaitForReady>
-        </ui:Target>
-      </ui:SelectItem.Target>
-    </ui:SelectItem>
     <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT' Pending" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_58" KeyModifiers="None" MouseButton="BTN_LEFT">
       <ui:Click.CursorPosition>
         <ui:CursorPosition Position="Center">
@@ -15026,7 +15005,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:Click>
-    <ui:CloseApplication DisplayName="Close Application 'push button  Close'" sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="CloseApplication_1">
+    <ui:CloseApplication DisplayName="Close Application 'push button  Close'" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="CloseApplication_1">
       <ui:CloseApplication.Target>
         <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="e47a3682-25b3-43e3-9004-0061e244ad97" InformativeScreenshot="ea2dc1dc6f904e038732fe0b482656e0" Selector="&lt;wnd app='iexplore.exe' cls='IEFrame' title='Merchant Management System - Internet Explorer - [InPrivate]' /&gt;&lt;ctrl idx='1' name='Close' role='push button' /&gt;">
           <ui:Target.TimeoutMS>

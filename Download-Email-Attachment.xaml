@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1066,2248</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>699,519</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -58,9 +58,9 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Sequence Read Email" sap:VirtualizedContainerService.HintSize="1076,2083" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence DisplayName="Sequence Read Email" sap:VirtualizedContainerService.HintSize="242,268" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Default="merchant.autostonks@gmail.com" Name="email" />
+      <Variable x:TypeArguments="x:String" Default="merchant.autostonks@outlook.com" Name="email" />
       <Variable x:TypeArguments="x:String" Name="password" />
       <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="messages" />
       <Variable x:TypeArguments="scg:List(scg:Dictionary(x:String, x:String))" Name="dataoulet" />
@@ -71,9 +71,9 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:GetPassword DisplayName="Get Password" sap:VirtualizedContainerService.HintSize="1034,22" sap2010:WorkflowViewState.IdRef="GetPassword_1" ProtectedPassword="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAv8zuaPD/gk2pedt92b2Y0wAAAAACAAAAAAAQZgAAAAEAACAAAABD5dnw+tCdh2W87zJljEl57zk+e1tldNNOUdt6IgCoUAAAAAAOgAAAAAIAACAAAAA/7GXMJIth8v/Rc4KRYsJuiY8ot1l+vpxtIvT05BL17xAAAABJA3q7iAje3qrJNYOLQSaCQAAAAPF58gjL/weZTjq6XeXkUuareeRSflYL+SGcswklYr5MK4yN4wvUR+eWCIWkb71bJeZhUj8badUHZMejFmso1Lo=" Result="[password]" />
-    <ui:GetIMAPMailMessages TimeoutMS="{x:Null}" DeleteMessages="False" DisplayName="Get IMAP Mail Messages" Email="[email]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="1034,22" sap2010:WorkflowViewState.IdRef="GetIMAPMailMessages_1" MailFolder="Inbox" MarkAsRead="False" Messages="[messages]" OnlyUnreadMessages="False" Password="[password]" Port="993" SecureConnection="None" Server="imap.gmail.com" Top="1" />
-    <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1034,1867" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[messages]">
+    <ui:GetPassword DisplayName="Get Password" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GetPassword_1" ProtectedPassword="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAv8zuaPD/gk2pedt92b2Y0wAAAAACAAAAAAAQZgAAAAEAACAAAACo5AynaCb3AWuA/lJ55NAaA5EPziIR+EOviGBv6RXwYAAAAAAOgAAAAAIAACAAAAAgrk6X0mHOoTBfvOoPwLSHZSOVtSitivSK4WJ3/4S17hAAAABOACtvcsJNH3dbEp92rI6mQAAAAFHlPa0U7Z47HuO5zctpqXJywK0bLtq+bsXhtKsPu6qp+rm5ka2jGDgOrRyf0MBHJmSgE+gkxKOlWBrKZITHj9s=" Result="[password]" />
+    <ui:GetIMAPMailMessages DeleteMessages="False" DisplayName="Get IMAP Mail Messages" Email="[email]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GetIMAPMailMessages_1" MailFolder="Inbox" MarkAsRead="False" Messages="[messages]" OnlyUnreadMessages="False" Password="[password]" Port="993" SecureConnection="Auto" Server="outlook.office365.com" TimeoutMS="120000" Top="1" />
+    <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[messages]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="snm:MailMessage">
           <ActivityAction.Argument>
@@ -164,6 +164,12 @@
           </Sequence>
         </ActivityAction>
       </ui:ForEach.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:ForEach>
   </Sequence>
 </Activity>
