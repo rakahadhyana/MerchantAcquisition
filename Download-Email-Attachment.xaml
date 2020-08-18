@@ -2,11 +2,12 @@
   <x:Members>
     <x:Property Name="attachmentPath" Type="OutArgument(x:String)" />
     <x:Property Name="imagesPath" Type="OutArgument(x:String)" />
+    <x:Property Name="newMail" Type="OutArgument(x:Boolean)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>699,519</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1632,2889</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -58,9 +59,13 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Sequence Read Email" sap:VirtualizedContainerService.HintSize="242,268" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence DisplayName="Sequence Read Email" sap:VirtualizedContainerService.HintSize="1642,2684" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
-      <Variable x:TypeArguments="x:String" Default="merchant.autostonks@outlook.com" Name="email" />
+      <Variable x:TypeArguments="x:String" Name="email">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">merchant.autostonks@gmail.com</Literal>
+        </Variable.Default>
+      </Variable>
       <Variable x:TypeArguments="x:String" Name="password" />
       <Variable x:TypeArguments="scg:List(snm:MailMessage)" Name="messages" />
       <Variable x:TypeArguments="scg:List(scg:Dictionary(x:String, x:String))" Name="dataoulet" />
@@ -71,105 +76,133 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:GetPassword DisplayName="Get Password" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GetPassword_1" ProtectedPassword="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAv8zuaPD/gk2pedt92b2Y0wAAAAACAAAAAAAQZgAAAAEAACAAAACo5AynaCb3AWuA/lJ55NAaA5EPziIR+EOviGBv6RXwYAAAAAAOgAAAAAIAACAAAAAgrk6X0mHOoTBfvOoPwLSHZSOVtSitivSK4WJ3/4S17hAAAABOACtvcsJNH3dbEp92rI6mQAAAAFHlPa0U7Z47HuO5zctpqXJywK0bLtq+bsXhtKsPu6qp+rm5ka2jGDgOrRyf0MBHJmSgE+gkxKOlWBrKZITHj9s=" Result="[password]" />
-    <ui:GetIMAPMailMessages DeleteMessages="False" DisplayName="Get IMAP Mail Messages" Email="[email]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="GetIMAPMailMessages_1" MailFolder="Inbox" MarkAsRead="False" Messages="[messages]" OnlyUnreadMessages="False" Password="[password]" Port="993" SecureConnection="Auto" Server="outlook.office365.com" TimeoutMS="120000" Top="1" />
-    <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[messages]">
-      <ui:ForEach.Body>
-        <ActivityAction x:TypeArguments="snm:MailMessage">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="mail" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="998,1732" sap2010:WorkflowViewState.IdRef="Sequence_1">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[mail.Subject.Contains(&quot;Merchant Acquisition&quot;)]" sap:VirtualizedContainerService.HintSize="956,1640" sap2010:WorkflowViewState.IdRef="If_1">
-              <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="811,1490" sap2010:WorkflowViewState.IdRef="Sequence_3">
-                  <Sequence.Variables>
-                    <Variable x:TypeArguments="x:String" Name="strDate" />
-                    <Variable x:TypeArguments="scg:IEnumerable(x:String)" Name="attachmentList" />
-                    <Variable x:TypeArguments="x:String" Name="excelPath" />
-                  </Sequence.Variables>
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <Assign sap:VirtualizedContainerService.HintSize="769,60" sap2010:WorkflowViewState.IdRef="Assign_1">
-                    <Assign.To>
-                      <OutArgument x:TypeArguments="x:String">[strDate]</OutArgument>
-                    </Assign.To>
-                    <Assign.Value>
-                      <InArgument x:TypeArguments="x:String">[Now.ToString("yyyyMMdd_HHmmss")]</InArgument>
-                    </Assign.Value>
-                  </Assign>
-                  <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="769,79" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[&quot;attachments\&quot; + strDate]" />
-                  <ui:SaveMailAttachments Attachments="[attachmentList]" DisplayName="Save Attachments" FolderPath="[&quot;attachments\&quot; + strDate]" sap:VirtualizedContainerService.HintSize="769,87" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_1" Message="[mail]" />
-                  <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="769,79" sap2010:WorkflowViewState.IdRef="CreateDirectory_2" Path="[&quot;attachments\&quot; + strDate + &quot;\images&quot;]" />
-                  <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="769,632" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[attachmentList]">
-                    <ui:ForEach.Body>
-                      <ActivityAction x:TypeArguments="x:Object">
-                        <ActivityAction.Argument>
-                          <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
-                        </ActivityAction.Argument>
-                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="733,498" sap2010:WorkflowViewState.IdRef="Sequence_4">
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <If Condition="[item.ToString.Contains(&quot;.xlsx&quot;)]" sap:VirtualizedContainerService.HintSize="691,305" sap2010:WorkflowViewState.IdRef="If_2">
-                            <If.Then>
-                              <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_3">
-                                <Assign.To>
-                                  <OutArgument x:TypeArguments="x:String">[excelPath]</OutArgument>
-                                </Assign.To>
-                                <Assign.Value>
-                                  <InArgument x:TypeArguments="x:String">[item.ToString]</InArgument>
-                                </Assign.Value>
-                              </Assign>
-                            </If.Then>
-                            <If.Else>
-                              <ui:MoveFile ContinueOnError="{x:Null}" Destination="[&quot;attachments\&quot; + strDate + &quot;\images&quot;]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="384,157" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="False" Path="[item.ToString]" />
-                            </If.Else>
-                          </If>
-                          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="691,61" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[item.ToString]" />
-                        </Sequence>
-                      </ActivityAction>
-                    </ui:ForEach.Body>
-                  </ui:ForEach>
-                  <Assign sap:VirtualizedContainerService.HintSize="769,60" sap2010:WorkflowViewState.IdRef="Assign_2">
-                    <Assign.To>
-                      <OutArgument x:TypeArguments="x:String">[attachmentPath]</OutArgument>
-                    </Assign.To>
-                    <Assign.Value>
-                      <InArgument x:TypeArguments="x:String">[excelPath]</InArgument>
-                    </Assign.Value>
-                  </Assign>
-                  <Assign sap:VirtualizedContainerService.HintSize="769,60" sap2010:WorkflowViewState.IdRef="Assign_4">
-                    <Assign.To>
-                      <OutArgument x:TypeArguments="x:String">[imagesPath]</OutArgument>
-                    </Assign.To>
-                    <Assign.Value>
-                      <InArgument x:TypeArguments="x:String">["attachments\" + strDate + "\images"]</InArgument>
-                    </Assign.Value>
-                  </Assign>
-                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="769,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[attachmentPath]" />
-                </Sequence>
-              </If.Then>
-            </If>
-          </Sequence>
-        </ActivityAction>
-      </ui:ForEach.Body>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </ui:ForEach>
+    <ui:GetPassword DisplayName="Get Password" sap:VirtualizedContainerService.HintSize="1600,22" sap2010:WorkflowViewState.IdRef="GetPassword_1" ProtectedPassword="AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAeDqKCQve1EeIH3LqdWAEPAAAAAACAAAAAAAQZgAAAAEAACAAAADqi4D/bs9SKtJAL1zuorh+LPp9m0k3U+cwLOILArkawQAAAAAOgAAAAAIAACAAAACGyCtG97Pp8btiX/QgpXQ/RdArbrLRn42HIg+qCO2MEhAAAAAUl5ZZrspoJrKM7lixqekxQAAAAAIAjGcgUC+q6RPJbdbdHKs1sVwGuEwMYNVBlJqaC83PyOS/zmwHWvfwRSD90QHeGC6UPi5Ntv/Z5OZQz0R7lsE=" Result="[password]" />
+    <ui:GetIMAPMailMessages DeleteMessages="False" DisplayName="Get IMAP Mail Messages" Email="[email]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="1600,22" sap2010:WorkflowViewState.IdRef="GetIMAPMailMessages_1" MailFolder="Inbox" MarkAsRead="True" Messages="[messages]" OnlyUnreadMessages="True" Password="[password]" Port="993" SecureConnection="Auto" Server="imap.gmail.com" TimeoutMS="120000" Top="1" />
+    <If Condition="[messages.Count &gt; 0]" sap:VirtualizedContainerService.HintSize="1600,2468" sap2010:WorkflowViewState.IdRef="If_4">
+      <If.Then>
+        <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1221,2318" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[messages]">
+          <ui:ForEach.Body>
+            <ActivityAction x:TypeArguments="snm:MailMessage">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="mail" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1185,2183" sap2010:WorkflowViewState.IdRef="Sequence_1">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <If Condition="[mail.Subject.Contains(&quot;Merchant Acquisition&quot;)]" sap:VirtualizedContainerService.HintSize="1143,2091" sap2010:WorkflowViewState.IdRef="If_1">
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="998,1941" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="x:String" Name="strDate" />
+                        <Variable x:TypeArguments="scg:IEnumerable(x:String)" Name="attachmentList" />
+                        <Variable x:TypeArguments="x:String" Name="excelPath" />
+                        <Variable x:TypeArguments="x:String" Name="chosenButton" />
+                      </Sequence.Variables>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:MessageBox Buttons="YesNo" Caption="New Merchant Acquisition Found" ChosenButton="[chosenButton]" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="956,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;do you want to input the data?&quot;]" />
+                      <If Condition="[chosenButton.Equals(&quot;Yes&quot;)]" sap:VirtualizedContainerService.HintSize="956,1750" sap2010:WorkflowViewState.IdRef="If_3">
+                        <If.Then>
+                          <Sequence sap:VirtualizedContainerService.HintSize="811,1600" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Assign sap:VirtualizedContainerService.HintSize="769,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[strDate]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">[Now.ToString("yyyyMMdd_HHmmss")]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="769,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[&quot;attachments\&quot; + strDate]" />
+                            <ui:SaveMailAttachments Attachments="[attachmentList]" DisplayName="Save Attachments" FolderPath="[&quot;attachments\&quot; + strDate]" sap:VirtualizedContainerService.HintSize="769,87" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_1" Message="[mail]" />
+                            <ui:CreateDirectory ContinueOnError="{x:Null}" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="769,80" sap2010:WorkflowViewState.IdRef="CreateDirectory_2" Path="[&quot;attachments\&quot; + strDate + &quot;\images&quot;]" />
+                            <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="769,639" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[attachmentList]">
+                              <ui:ForEach.Body>
+                                <ActivityAction x:TypeArguments="x:Object">
+                                  <ActivityAction.Argument>
+                                    <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
+                                  </ActivityAction.Argument>
+                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="733,504" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <If Condition="[item.ToString.Contains(&quot;.xlsx&quot;)]" sap:VirtualizedContainerService.HintSize="691,310" sap2010:WorkflowViewState.IdRef="If_2">
+                                      <If.Then>
+                                        <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                                          <Assign.To>
+                                            <OutArgument x:TypeArguments="x:String">[excelPath]</OutArgument>
+                                          </Assign.To>
+                                          <Assign.Value>
+                                            <InArgument x:TypeArguments="x:String">[item.ToString]</InArgument>
+                                          </Assign.Value>
+                                        </Assign>
+                                      </If.Then>
+                                      <If.Else>
+                                        <ui:MoveFile ContinueOnError="{x:Null}" Destination="[&quot;attachments\&quot; + strDate + &quot;\images&quot;]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="384,160" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="False" Path="[item.ToString]" />
+                                      </If.Else>
+                                    </If>
+                                    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="691,62" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[item.ToString]" />
+                                  </Sequence>
+                                </ActivityAction>
+                              </ui:ForEach.Body>
+                            </ui:ForEach>
+                            <Assign sap:VirtualizedContainerService.HintSize="769,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[attachmentPath]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">[excelPath]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <Assign sap:VirtualizedContainerService.HintSize="769,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[imagesPath]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">["attachments\" + strDate + "\images"]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="769,62" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[attachmentPath]" />
+                            <Assign sap:VirtualizedContainerService.HintSize="769,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:Boolean">[newMail]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                          </Sequence>
+                        </If.Then>
+                      </If>
+                    </Sequence>
+                  </If.Then>
+                </If>
+              </Sequence>
+            </ActivityAction>
+          </ui:ForEach.Body>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ui:ForEach>
+      </If.Then>
+      <If.Else>
+        <ui:MessageBox ChosenButton="{x:Null}" Buttons="Ok" Caption="Merchant Acquisition Mail" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;No New Mail Found&quot;]" />
+      </If.Else>
+    </If>
   </Sequence>
 </Activity>
